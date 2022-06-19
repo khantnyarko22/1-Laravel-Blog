@@ -5,13 +5,16 @@
 
 @section('content')
 <div class="container mt-5">
-
+@if(session()->has('success'))
+<div>
+    
+</div>
     @foreach ($posts as $post)
         <div>
             <h3>
                 <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
             </h3>
-            January 1, 2021 by Mark
+             {{$post->created_at->format('M d,y=')}}by Mark
             <p>{{ $post->body }}</p>
             <div class="d-flex justify-content-end">
                 <a href="/posts/{{ $post->id }}/edit/" class="btn btn-outline-success">Edit</a>
