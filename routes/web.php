@@ -5,6 +5,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 
+// Route::get('/', [PostController::class, 'index']);
+
+// Route::get('welcome/{lang}', function($lang) {
+//     if($lang == 'en') {
+//         return "English";
+//     }
+//     if($lang == 'my') {
+//         return "Myanmar";
+//     }
+// })->where('lang', 'en|my');
+// Route::view('welcomexxx', 'welcome');
+
 Route::redirect('/', '/posts');
 
 // Route::prefix('posts')->middleware('myauth')->group(function() {

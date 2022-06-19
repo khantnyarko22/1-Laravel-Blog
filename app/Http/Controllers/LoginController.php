@@ -19,8 +19,8 @@ class LoginController extends Controller
     {
         $user = User::where('email', $request->email)->first();
         
-        if(! $user) {
-            // use Illuminate\Validation\ValidationException;
+        if(! $user) { // use Illuminate\Validation\ValidationException;
+           
             throw ValidationException::withMessages([
                 'email' => 'The email is not registerd.'
             ]);

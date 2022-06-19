@@ -55,9 +55,7 @@ class PostController extends Controller
         // $post->created_at = now();
         // $post->updated_at = now();
         // $post->save();
-
-       
-
+        
         // Post::create([
         //     'title' =>  $request->title,
         //     'body' =>  $request->body,

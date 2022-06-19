@@ -15,7 +15,6 @@
             @endforeach
         </ul>
         @endif --}}
-
         <form action="/posts/{{ $post->id }}" method="POST">
             {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
             @csrf
