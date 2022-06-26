@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 use  App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB; 
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::paginate(3);
+        // $posts = Post::paginate(3);
+
+        $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+                ->select('posts.*', 'users.name as name')
+                ->paginate(3);
 
         return view('posts.index', compact('posts'));
     }
@@ -106,6 +113,10 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        // $post = Post::find($id);
+        $post = Post::join('users', 'posts.user_id', '=', 'users.id')
+                ->select('posts.*', 'users.name as name')
+                ->find($id);
 
         return view('posts.show', compact('post'));
     }

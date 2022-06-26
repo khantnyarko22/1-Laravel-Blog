@@ -60,3 +60,4 @@ Route::delete('/posts/{id}', [PostController::class, 'destroy'])->middleware('my
 //     }
 // })->where('lang', 'en|my');
 // Route::view('welcomexxx', 'welcome');
+
