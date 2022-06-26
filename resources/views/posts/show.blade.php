@@ -10,9 +10,12 @@
             </div>
             <div class="card-body p-4">
             <h4>{{ $post->title }}</h4>
-            <p>{{ $post->body }}</p>
-            <p class="mb-5 mt-3 text-end fw-bold">{{ $post->created_at->format('M d, Y') }} by author</p>
-            <p class="mb-5 mt-3 text-end fw-bold"><i>{{ $post->created_at->format('M d, Y') }}</i> by {{ $post->name }}</p>
+            <p>Post by <b> {{$post->auther}}-></b> on <i> {{$post-.created_at->diffforHumans()}}</i></p>
+            <p>{{$post-.body}}</p>    
+            </p>
+            
+            {{-- <p class="mb-5 mt-3 text-end fw-bold">{{ $post->created_at->format('M d, Y') }} by author</p>
+            <p class="mb-5 mt-3 text-end fw-bold"><i>{{ $post->created_at->format('M d, Y') }}</i> by {{ $post->name }}</p> --}}
             <a href="/posts" class="btn btn-outline-secondary d-grid">Go Home</a>
             </div>
         </div>
